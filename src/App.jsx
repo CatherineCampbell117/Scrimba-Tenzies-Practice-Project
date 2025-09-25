@@ -26,10 +26,17 @@ function App() {
 
     const diceElements = randomNumsArr.map((num, index) => <Die key={index} value={num} />);
 
+    function getNewDice() {
+        setRandomNumsArr(generateAllNewDice());
+    }
+
     return (
         <>
             <main className="mainContent">
                 <div className="dieContainer">{diceElements}</div>
+                <button className="rollBtn" onClick={getNewDice}>
+                    Roll
+                </button>
             </main>
         </>
     );
